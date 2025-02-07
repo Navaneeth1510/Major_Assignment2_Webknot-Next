@@ -17,9 +17,19 @@ import {
 } from "@/components/ui/table"
 import Link from "next/link";
 import { useEffect, useState } from "react";
+interface Product {
+    id: string;
+    name: string;
+    description?: string;
+    image: string;
+    stock: number;
+    category: string;
+    price: number;
+    availability: string;
+}
 
 export default function MenuComponent() {
-    const [products, setProd] = useState([]);
+    const [products, setProd] = useState<Product[]>([]);
     const [categories, setCategories] = useState([]);
     useEffect(() => {
         fetch("http://localhost:3001/menu/get-menu")
@@ -144,7 +154,6 @@ export default function MenuComponent() {
                                                 <Checkbox id="terms" className="border border-white size-3" />
                                             </TableCell>
                                             <TableCell className="text-center">
-                                                {/* @ts-ignore */}
                                                 <img src={`/images/icons/${product.image}`} alt={product.name} className="w-12 h-12 rounded mx-auto" />
                                             </TableCell>
                                             <TableCell className="text-start">

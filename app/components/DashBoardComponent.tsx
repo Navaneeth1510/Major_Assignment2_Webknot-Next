@@ -69,17 +69,18 @@ export default function DashBoardComponent() {
 
 
     const options = {
-        "plugins": {
-            "legend": {
-                "position": 'top' as 'top' | 'center' | 'left' | 'right' | 'bottom' | 'chartArea',
+        maintainAspectRatio: false, // ✅ Move this outside plugins
+        plugins: {
+            legend: {
+                position: 'top' as 'top' | 'center' | 'left' | 'right' | 'bottom' | 'chartArea',
             },
-            "tooltip": {
-                "mode": "nearest",
-                "intersect": false,
-                "maintainAspectRatio": false,
+            tooltip: {
+                mode: "nearest" as "x" | "y" | "nearest" | "index" | "dataset" | "point",
+                intersect: false,
             }
-        }
+        },
     };
+    
 
 
     useEffect(() => {
@@ -229,7 +230,7 @@ export default function DashBoardComponent() {
                             </div>
                         </div>
                         <div className="lg:h-[88%] w-full flex justify-center ">
-                            {/* @ts-ignore */}
+                            
                             <Line data={data} options={options} className="w-full" />
                         </div>
                     </div>
