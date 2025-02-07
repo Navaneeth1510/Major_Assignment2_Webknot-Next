@@ -35,11 +35,33 @@ import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
+class Attendance {
+    "id": string;
+    "name": string;
+    "description": string;
+    "date": string;
+    "timings": string;
+}
+class Staff {
+    "id": string;
+    "name": string;
+    "description": string;
+    "email": string;
+    "phone": string;
+    "age": number;
+    "salary": string;
+    "timings": string;
+}
+
+
+
+
+
 
 export default function staffsComponent() {
 
-    const[staffs, setStaff] = useState([]);
-    const[attnds, setAttnd] = useState([]);
+    const [staffs, setStaff] = useState<Staff[]>([]);
+    const [attnds, setAttnd] = useState<Attendance[]>([]);
     useEffect(()=>{
         fetch('http://localhost:3001/staff/get-staff')
         .then((res) => res.json())

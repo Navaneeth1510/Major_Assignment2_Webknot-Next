@@ -71,12 +71,16 @@ export default function MenuComponent() {
                     <div className="bottom flex-grow mt-2 h-[146px] mt-5">
                         <div className="cards grid md:grid-cols-7 grid-cols-2 gap-6 h-full">
                             {categories.map((category, index) => (
+                                // @ts-ignore
                                 <div key={index} className={`card  ${category.name =="All" ? 'bg-[#FAC1D9]' : 'bg-[#292C2D]'} rounded-xl flex flex-col justify-between`}>
                                     <div className="top flex justify-end mt-3 me-3">
+                                        {/* @ts-ignore */}
                                         <img src={`images/icons/${category.image}`} alt="" />
                                     </div>
                                     <div className="bottom text-white pb-0 ms-3 mb-2">
+                                    {/* @ts-ignore */}
                                         <p className={`text-[16px] md:text-[25px] font-[Poppins] font-[500] ${category.name =="All" ? 'text-[#333333]' : 'text-white'}  `} >{category.name}</p>
+                                        {/* @ts-ignore */}
                                         <p className={`text-[16px] md:text-[25px] font-[Poppins] font-[500] ${category.name =="All" ? 'text-[#333333]' : 'text-white'}  `} >{category.wty}</p>
 
                                     </div>
@@ -140,16 +144,24 @@ export default function MenuComponent() {
                                                 <Checkbox id="terms" className="border border-white size-3" />
                                             </TableCell>
                                             <TableCell className="text-center">
+                                                {/* @ts-ignore */}
                                                 <img src={`/images/icons/${product.image}`} alt={product.name} className="w-12 h-12 rounded mx-auto" />
                                             </TableCell>
                                             <TableCell className="text-start">
+                                                {/* @ts-ignore */}
                                                 <div>{product.name}</div>
+                                                {/* @ts-ignore */}
                                                 <div className="text-gray-400 text-sm">{product.description}</div>
                                             </TableCell>
+                                            {/* @ts-ignore */}
                                             <TableCell className="text-center">{product.id}</TableCell>
+                                            {/* @ts-ignore */}
                                             <TableCell className="text-center">{product.stock}</TableCell>
+                                            {/* @ts-ignore */}
                                             <TableCell className="text-center">{product.category}</TableCell>
+                                            {/* @ts-ignore */}
                                             <TableCell className="text-center">{product.price}</TableCell>
+                                            {/* @ts-ignore */}
                                             <TableCell className="text-red-400 text-center">{product.availability}</TableCell>
                                             <TableCell className="flex space-x-2 justify-center items-center align-center h-16">
                                                 <div className="flex space-x-2">

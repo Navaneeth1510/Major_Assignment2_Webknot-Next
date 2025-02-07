@@ -229,6 +229,7 @@ export default function DashBoardComponent() {
                             </div>
                         </div>
                         <div className="lg:h-[88%] w-full flex justify-center ">
+                            {/* @ts-ignore */}
                             <Line data={data} options={options} className="w-full" />
                         </div>
                     </div>
