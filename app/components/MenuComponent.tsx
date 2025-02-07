@@ -86,7 +86,7 @@ export default function MenuComponent() {
                     </div>
                 </div>
 
-                <div className="special px-5 h-[5%] lg:-mt-10 mt-[200px]">
+                <div className="special px-5 h-[5%] lg:-mt-10 mt-[300px]">
                     <p className="text-[25px] font-[Poppins] font-[500] text-white">
                         Special menu of all items
                     </p>

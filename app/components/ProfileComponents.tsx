@@ -15,15 +15,13 @@ export default function ProfileComponent() {
                         </div>
                         <p className="text-[20px] md:text-[25px] font-[Poppins] font-[500]">Profile</p>
                     </div>
-                    <div className="profile flex lg:w-[20%] md:w-[10%] justify-center items-center">
+                    <div className="profile flex w-[40%] lg:w-[10%] justify-center items-center">
                         <div className="profile border-e p-2 me-5">
                             <FontAwesomeIcon icon={faBell} className="h-[18px] me-5" />
                         </div>
-                        <div className="px-2">
-                            <Link href='/profile'>
-                                <img src="/images/icons/Profile.png" alt="Profile" className="h-[35px] w-[35px] md:h-[40px] md:w-[40px]" />
-                            </Link>
-                        </div>
+                        <Link href='/profile'>
+                            <img src="/images/icons/Profile.png" alt="Profile" className="h-[35px] w-[35px] md:h-[40px] md:w-[40px]" />
+                        </Link>
                     </div>
                 </div>
 

@@ -41,7 +41,7 @@ export default function staffsComponent() {
     const[staffs, setStaff] = useState([]);
     const[attnds, setAttnd] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5010/staff')
+        fetch('http://localhost:3001/staff/get-staff')
         .then((res) => res.json())
             .then((data) => {
                 if (data["staff-details"]) {
@@ -82,7 +82,7 @@ export default function staffsComponent() {
                             <Button className='flex flex-col text-[16px] font-[Poppins] font-[500] p-6 bg-[#FAC1D9] text-black'>
                                 Add Staff
                             </Button>
-                            <Button className='flex p-6 text-[16px] font-[Poppins] font-[500] bg-[#FAC1D9] text-black'>
+                            <Button variant="secondary" className='flex p-6 text-[16px] font-[Poppins] font-[500] bg-[#3D4142] text-white'>
                                 Sort By <ChevronDown />
                             </Button>
                         </div>
@@ -166,7 +166,7 @@ export default function staffsComponent() {
                                                         <Checkbox className="border border-white size-3" />
                                                     </TableHead>
                                                     <TableHead className="text-center text-white">ID</TableHead>
-                                                    <TableHead className="text-center  text-white  lg:w-[30%] w-[30%]">Name</TableHead>
+                                                    <TableHead className="text-center  text-white  lg:w-[30%] w-[50%]">Name</TableHead>
                                                     <TableHead className="text-center text-white">Date</TableHead>
                                                     <TableHead className="text-center text-white">Timings</TableHead>
                                                     <TableHead className="text-center text-white w-[30%] me-10">Status</TableHead>
@@ -193,12 +193,26 @@ export default function staffsComponent() {
                                                         <TableCell className="text-center">{attdn.date}</TableCell>
                                                         <TableCell className="text-center">{attdn.timings}</TableCell>
                                                         <TableCell className="flex space-x-2 justify-center items-center align-center h-16">
-                                                            <div className="flex space-x-2">
-                                                                <Button className="p-2 bg-[#FAC1D9] text-black">Present</Button>
-                                                                <Button className="p-2 bg-[#FFDF6B] text-black">Absent</Button>
-                                                                <Button className="p-2 bg-[#6BE4FF] text-black">Half Shift</Button>
-                                                                <Button className="p-2 bg-[#FF6A6A] text-black">Leave</Button>
-                                                            </div>
+                                                            {index%2==0 ? 
+                                                                (
+                                                                    <div className="flex space-x-2">
+                                                                        <Button className="p-2 bg-[#FAC1D9] text-black">Present</Button>
+                                                                        <Button className="p-2 bg-[#FFDF6B] text-black">Absent</Button>
+                                                                        <Button className="p-2 bg-[#6BE4FF] text-black">Half Shift</Button>
+                                                                        <Button className="p-2 bg-[#FF6A6A] text-black">Leave</Button>
+                                                                    </div>
+                                                                )
+                                                                :
+                                                                (
+                                                                    <div className="flex justify-end me-10 w-full space-x-2">
+                                                                        <Button className="p-2 bg-[#292C2D] text-white flex justify-center items-center gap-2">
+                                                                            Present
+                                                                            <Pencil className="w-5 h-5 cursor-pointer text-[white]" />
+                                                                        </Button>
+                                                                    </div>
+                                                                )
+                                                            }
+                                                            
                                                         </TableCell>
                                                     </TableRow>
                                                 ))}

@@ -174,7 +174,7 @@ export default function DashBoardComponent() {
                             </div>
                         </div>    
 
-                        <div className="card p-3 px-5 py-4 pb-5 flex flex-col md:w-[48%] w-full h-auto rounded-[10px] bg-[#292C2D] overflow-y-auto lg:mb-4 mb-3 lg:mb-0">
+                        <div className="card p-3 px-5 py-4 pb-5 flex flex-col md:w-[48%] w-full h-auto rounded-[10px] bg-[#292C2D] overflow-y-auto lg:mb-4 mb-[-100px] lg:mb-0">
                             <div className="headings flex justify-between items-center">
                                 <p className="text-[20px] lg:text-[25px] font-[Poppins] font-[500] mb-3">Popular Dishes</p>
                                 <p className="text-[14px] lg:text-[16px] font-[Poppins] font-[400] text-[#FAC1D9] underline underline-offset-1">See All</p>
